@@ -47,19 +47,19 @@ public class main<T> {
         tail = null;
     }
     public void addToEnd(T info){
-        if(head ==null){
-            head = new Node(info,null);
-            tail= head;
+        if(head == null){
+            head = new Node(info, null);
+            tail = head;
         }
         else{
-            Node<T> current = new Node<>(info,null);
+            Node<T> current = new Node<>(info, null);
             tail.next = current;
             tail = current;
                 }
     }
     public void addToBegin(T info){
-        if(head ==null){
-            head = new Node(info,null);
+        if(head == null){
+            head = new Node(info, null);
             tail= head;
         }
         else{
@@ -67,6 +67,15 @@ public class main<T> {
             head = current;
         }
     }
+    public T push(){
+    
+        Node<T> current = head;
+        head = head.next;
+        return current.info;
+    }
+    
+    
+  
     public T pop(){
         Node<T> current = head;
         head = head.next;
@@ -82,7 +91,7 @@ public class main<T> {
     @Override
     public String toString() {
         String str = "";
-        for(Node<T>i = head; i!=null ;  i=i.next )
+        for(Node<T>i = head; i!= null ;  i=i.next )
         str+=i.info +" ";
         return str;
     }
